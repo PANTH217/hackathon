@@ -13,7 +13,7 @@ assert tf.__version__.startswith("2.16"), "TensorFlow version mismatch!"
 model = tf.keras.models.load_model("trained_model/Untitled0.ipynb")
 
 working_dir = os.path.dirname(os.path.abspath(__file__))
-model_path = "trained_model\Untitled0.ipynb"
+model_path = r"trained_model\Untitled0.ipynb"
 # Load the pre-trained model
 model = tf.keras.models.load_model(model_path)
 
