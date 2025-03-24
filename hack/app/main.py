@@ -8,6 +8,9 @@ import streamlit as st
 
 # Ensure you're using the right version
 assert tf.__version__.startswith("2.17"), "TensorFlow version mismatch!"
+# Check for TensorFlow version compatibility
+if not tf.__version__.startswith("2.16"):
+    print(f"⚠️ Warning: TensorFlow version {tf.__version__} found, but 2.16 expected.")
 
 # Load model as usual
 model = tf.keras.models.load_model("trained_model/Untitled0.ipynb")
