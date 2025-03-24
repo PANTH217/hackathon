@@ -7,7 +7,11 @@ import tensorflow as tf
 import streamlit as st
 
 # Ensure you're using the right version
-assert tf.__version__.startswith("2.17"), "TensorFlow version mismatch!"
+if not tf.__version__.startswith("2."):
+    raise RuntimeError(f"❌ TensorFlow version mismatch! Found {tf.__version__}, expected 2.x")
+else:
+    print(f"✅ Using TensorFlow {tf.__version__}")
+
 # Check for TensorFlow version compatibility
 if not tf.__version__.startswith("2.16"):
     print(f"⚠️ Warning: TensorFlow version {tf.__version__} found, but 2.16 expected.")
